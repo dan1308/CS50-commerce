@@ -1,0 +1,72 @@
+body {
+    padding: 10px;
+}
+
+input {
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(221, 220, 220, 0.781);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    width: 50vh;
+}
+
+#description {
+    width: 80vh;
+    height: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(194, 194, 194, 0.781);
+}
+
+input:hover {
+    box-shadow: 2px 2px 2px 2px rgba(240, 236, 236, 0.055), 1px 2px 2px 2px rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+.bid {
+    width: 40vh;
+    margin: 10px;
+}
+
+.imageUrl {
+    width: 50vh;
+    margin: 10px;
+}
+
+select {
+    border-radius: 5px;
+    border: 1px solid rgba(196, 194, 194, 0.781);
+    width: 30vh;
+    padding: 5px;
+    margin: 10px;
+}
+
+.submit {
+    background-color: #4d90fe;
+    border: 1px solid #3079ed;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+ul{
+    list-style-type: none;
+}
+.listContainer{
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    height: 30vh;
+    border: 2px solid grey;
+    flex-direction: row;
+}
+.listContainerCh{
+    margin: 5px;
+}
