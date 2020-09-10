@@ -1,17 +1,18 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <form action=""></form>
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
         <h5>Title: </h5>
-        <input type="text" class="title" placeholder="title">
+        <input type="text" class="title" name="title" placeholder="title">
         <h5>Description: </h5>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
         <h5>Starting Bid: (currency is in G.B.P) </h5>
-        <input type="text" class="bid" placeholder="place bid">
+        <input type="text" class="bid" name="bid" placeholder="place bid">
         <h5>Image: </h5>
-        <input type="image" class="imageUrl" placeholder="image url">
+        <input type="url" class="imageUrl" name="image" placeholder="image url">
         <h5>Category: </h5>
-        <select name="categories" id="categories">
+        <select name="category" id="categories">
             {% for category in categories %}
                 <option value="{{ category }}">{{ category }}</option>
             {% endfor %}

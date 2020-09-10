@@ -64,10 +64,26 @@ def register(request):
         return render(request, "auctions/register.html")
 
 def create(request):
-    categories = ["Electronics", "Furniture", "Handmade", "Art", "Toys", "Home Appliances", "Music Instruments", "Mens Clothes", "Womens Clothes", "Kids Clothes", "other"]
-    return render(request, "auctions/create.html", {
-        "categories": categories
-    })
+    if request.method == "POST":
+        title = request.POST["title"]
+        description = request.POST["description"]
+        bid = request.POST["bid"]
+        category = request.POST["category"]
+        image = request.POST["image"]
+        seller = request.user 
+        try:
+            NewListing = NewListings(title=title, description=description, bid=bid, category=category, image=image, seller=seller)
+            NewListing.save()
+        except:
+            return render(request, "auctions/index.html")
+        return render(request, "auctions/index.html", {
+            "NewListings": NewListings.objects.all()
+        })
+    else:
+        categories = ["Electronics", "Furniture", "Handmade", "Art", "Toys", "Home Appliances", "Music Instruments", "Mens Clothes", "Womens Clothes", "Kids Clothes", "other"]
+        return render(request, "auctions/create.html", {
+            "categories": categories
+        })
 
 def categories(request):
     categories = ["Electronics", "Furniture", "Handmade", "Toys", "Home Appliances", "Music Instruments", "Mens Clothes", "Womens Clothes", "Kids Clothes", "other"]

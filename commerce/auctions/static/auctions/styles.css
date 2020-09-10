@@ -56,17 +56,15 @@ select {
     border-radius: 5px;
 }
 
-ul{
-    list-style-type: none;
-}
 .listContainer{
     display: flex;
-    padding: 5px;
-    margin: 10px;
-    height: 30vh;
-    border: 2px solid grey;
     flex-direction: row;
+    flex-wrap: wrap;
 }
-.listContainerCh{
-    margin: 5px;
+.card{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 13px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 20px;
 }
